@@ -5,18 +5,45 @@
 <title>Resume_Pannarai</title>
 <meta name ="viewport" content="width=device-width,initial-scale=1.0">
 <link href="resume.css" rel="stylesheet" type="text/css">
-    
+
+<script type="text/javaScript">
+   function makeBackGroundBlue() {document.body.style.backgroundColor = '#E1D8B8  '; }     
+</script>  
+<script>
+    function hi() {document.write('hi'); }     
+ </script>  
+
+
  </head>
  <body>
+    
+        
 
     <div class="container">
         <img src="https://miro.medium.com/fit/c/256/256/0*K4TvJX2VmWoIlOgp.">  
         
-        <h1>Pannarai Mernin</h1>
+        <button onclick="makeBackGroundBlue()">set color</button>
+        <!-- <button onclick="hi()">hi</button> -->
+        
+
+
+       
+        
+                      
+        
+        <h1 id="id01" onmouseout="ChangeName()">Pannarai Mernin </h1>
     <div class = 'education'>
         <h3>Education</h3>
         <p>Economics,Khonkaen University</p>
     </div>      
+    
+    <script>
+        function ChangeName() {
+  document.getElementById("id01").innerHTML = "Name changed!";}
+        
+        </script>
+        
+        
         <div id="info">
             <ul>
                 <li>Tel.612-987-6492 </li>
@@ -26,9 +53,10 @@
             
             
         </div>
+
         <div id = 'skill'>
                 <h2>Skills</h2>
-                <ul>
+                <ul id="myList" >
                     <li>Python</li>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -39,6 +67,29 @@
                     <li>Desion Making</li>
                 </ul>
         </div>
+        <input type="text" id="candidate"/>
+        <button onclick="addItem()">add item</button>
+        <button onclick="removeItem()">remove item</button>
+
+<script>
+function addItem(){
+    var ul = document.getElementById("myList");
+    var candidate = document.getElementById("candidate");
+     var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
+
+function removeItem(){
+	var ul = document.getElementById("myList");
+  var candidate = document.getElementById("candidate");
+  var item = document.getElementById(candidate.value);
+  ul.removeChild(item);
+}
+    
+    </script>
+
         <div class = 'Experience'>
             <h3>Experience</h3>
             <p>Intern as Data Scientist at Fire One One </p>
@@ -54,54 +105,22 @@
                 
     
             </div>
-       
-
+            
+            
+        
+            
+            
+               
+           
+    
+            
+                
 
 
     </div>
-
-
-    <!-- <div class = 'header'>
-        <img src="https://miro.medium.com/fit/c/256/256/0*K4TvJX2VmWoIlOgp.">     
-        <h1>Pannarai Mernin</h1> 
-    </div>
+     
     
-    
-        <div id = 'info'>
-            <ul>
-                <li>Tel.612-987-6492 </li>
-                <li>pannatech311@gmail.com</li>
-                <li>Minneapolis,USA</li>
-            </ul>
-            <div class = 'skill'>
-                <h2>Skills</h2>
-                <ul>
-                    <li>Public Speaking</li>
-                    <li>Neotiation</li>
-                    <li>Team work</li>
-                    <li>Desion Making</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class = 'Education'>
-            <h2>Education</h2>
-            <ul>
-                    <li> Economics,Khonkaen University </li>
-                </ul>
-            
-            
-        </div>
-
-        <div class = 'Experience'>
-                <h2>Experience</h2>
-                <ul>
-                        <li> None </li>
-                    </ul>
-                
-                
-            </div> -->
-
  </body>
+ 
+
  </html>
